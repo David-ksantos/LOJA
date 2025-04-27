@@ -1,13 +1,23 @@
 package com.devl.Loja_api.models;
 
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_produtos")
 public class ProdutoModel {
 
+    @Id
+    @Column(name = "id")
     private String id;
+    @Column(name = "nome")
     private String nome;
+    @Column(name = "preco")
     private Double preco;
+    @Column(name = "estoque")
     private int estoque;
 
     public String getId() {
@@ -50,5 +60,15 @@ public class ProdutoModel {
                 ", preco=" + preco +
                 ", estoque=" + estoque +
                 '}';
+    }
+
+    public ProdutoModel() {
+    }
+
+    public ProdutoModel(String id, String nome, Double preco, int estoque) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+        this.estoque = estoque;
     }
 }
