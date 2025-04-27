@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Loja_api
+  datasource:
+    url: jdbc:h2:mem:estoque
+    username: sa
+    password: 2004
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      path: /meu-estoque
