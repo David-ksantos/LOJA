@@ -5,6 +5,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 @Table(name = "tb_produtos")
@@ -13,10 +16,16 @@ public class ProdutoModel {
     @Id
     @Column(name = "id")
     private String id;
+
+    @NotBlank
     @Column(name = "nome")
     private String nome;
+
+    @PositiveOrZero
     @Column(name = "preco")
     private Double preco;
+
+    @PositiveOrZero
     @Column(name = "estoque")
     private int estoque;
 
